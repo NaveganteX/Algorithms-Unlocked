@@ -21,21 +21,22 @@ def topological_sort(graph):
 
 	return topological_order
 
-adjacency_list = [
-	[2],
-	[3],
-	[3, 4],
-	[5],
-	[5],
-	[6, 10],
-	[7],
-	[12],
-	[9],
-	[10],
-	[11],
-	[12],
-	[13],
-	[]
-]
+if __name__ == '__main__':
+	adjacency_list = [
+		[2],
+		[3],
+		[3, 4],
+		[5],
+		[5],
+		[6, 10],
+		[7],
+		[12],
+		[9],
+		[10],
+		[11],
+		[12],
+		[13],
+		[]
+	]
 
-print(topological_sort(adjacency_list))
+	print(topological_sort(adjacency_list))
