@@ -1,4 +1,4 @@
-def topological_sorting(graph):
+def topological_sort(graph):
 	in_degree = [0] * len(graph)
 	for item in graph:
 		for out_vertex in item:
@@ -38,4 +38,4 @@ adjacency_list = [
 	[]
 ]
 
-print(topological_sorting(adjacency_list))
+print(topological_sort(adjacency_list))
