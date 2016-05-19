@@ -15,7 +15,7 @@ class Graph(object):
 			adjacency_list += [current_reach]
 		return adjacency_list
 
-def DAG_shortest_paths(graph, weight, source):
+def dag_shortest_paths(graph, weight, source):
 	v_num = graph.v_num
 	pred  = [None] * v_num
 	shortest         = [None] * v_num
@@ -48,4 +48,4 @@ if __name__ == '__main__':
 	graph.adjacency_matrix[3, 5] = 1
 	graph.adjacency_matrix[4, 5] = -2
 
-	DAG_shortest_paths(graph, graph.adjacency_matrix, 0)
+	dag_shortest_paths(graph, graph.adjacency_matrix, 0)
