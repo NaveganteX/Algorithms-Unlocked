@@ -21,7 +21,7 @@ def DAG_shortest_paths(graph, weight, source):
 	shortest         = [None] * v_num
 	shortest[source] = 0
 
-	def relax(u, v):
+	def _relax(u, v):
 		if not shortest[v] or shortest[u] + weight[u, v] < shortest[v]:
 			shortest[v] = shortest[u] + weight[u, v]
 			pred[v] = u
@@ -30,7 +30,7 @@ def DAG_shortest_paths(graph, weight, source):
 	for vertex_u in linear_order:
 		for v in range(v_num):
 			if weight[vertex_u, v]:
-				relax(vertex_u, v)
+				_relax(vertex_u, v)
 
 	print("shortest:", shortest)
 	print()
