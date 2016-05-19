@@ -10,7 +10,7 @@ class Graph(object):
 		for i in range(self.v_num):
 			current_reach = []
 			for m in range(self.v_num):
-				if self.adjacency_matrix[i, m]:
+				if self.adjacency_matrix[i, m] is not None:
 					current_reach += [m]
 			adjacency_list += [current_reach]
 		return adjacency_list
@@ -22,7 +22,7 @@ def DAG_shortest_paths(graph, weight, source):
 	shortest[source] = 0
 
 	def _relax(u, v):
-		if not shortest[v] or shortest[u] + weight[u, v] < shortest[v]:
+		if shortest[v] == None or shortest[u] + weight[u, v] < shortest[v]:
 			shortest[v] = shortest[u] + weight[u, v]
 			pred[v] = u
 
