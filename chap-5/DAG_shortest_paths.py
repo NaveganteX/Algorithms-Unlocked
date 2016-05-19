@@ -33,19 +33,19 @@ def DAG_shortest_paths(graph, weight, source):
 				_relax(vertex_u, v)
 
 	print("shortest:", shortest)
-	print()
 	print("pred:    ", pred)
 
-graph = Graph(6)
-graph.adjacency_matrix[0, 1] = 5
-graph.adjacency_matrix[0, 2] = 3
-graph.adjacency_matrix[1, 2] = 2
-graph.adjacency_matrix[1, 3] = 6
-graph.adjacency_matrix[2, 3] = 7
-graph.adjacency_matrix[2, 4] = 4
-graph.adjacency_matrix[2, 5] = 2
-graph.adjacency_matrix[3, 4] = -1
-graph.adjacency_matrix[3, 5] = 1
-graph.adjacency_matrix[4, 5] = -2
+if __name__ == '__main__':
+	graph = Graph(6)
+	graph.adjacency_matrix[0, 1] = 5
+	graph.adjacency_matrix[0, 2] = 3
+	graph.adjacency_matrix[1, 2] = 2
+	graph.adjacency_matrix[1, 3] = 6
+	graph.adjacency_matrix[2, 3] = 7
+	graph.adjacency_matrix[2, 4] = 4
+	graph.adjacency_matrix[2, 5] = 2
+	graph.adjacency_matrix[3, 4] = -1
+	graph.adjacency_matrix[3, 5] = 1
+	graph.adjacency_matrix[4, 5] = -2
 
-DAG_shortest_paths(graph, graph.adjacency_matrix, 0)
+	DAG_shortest_paths(graph, graph.adjacency_matrix, 0)
