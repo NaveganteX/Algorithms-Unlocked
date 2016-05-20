@@ -31,17 +31,24 @@ def dijkstra(graph, source):
 	print("shortest:", shortest)
 	print("pred:    ", pred)
 
+def trans(alphabet):
+	return {"s":0, "t":1, "x":2, "y":3, "z":4}[alphabet]
+
 if __name__ == '__main__':
 	graph = Graph(5)
-	graph.adjacency_matrix[0, 1] = 6
-	graph.adjacency_matrix[0, 3] = 4
-	graph.adjacency_matrix[1, 2] = 3
-	graph.adjacency_matrix[1, 3] = 2
-	graph.adjacency_matrix[2, 4] = 4
-	graph.adjacency_matrix[3, 1] = 1
-	graph.adjacency_matrix[3, 2] = 9
-	graph.adjacency_matrix[3, 4] = 3
-	graph.adjacency_matrix[4, 0] = 7
-	graph.adjacency_matrix[4, 2] = 5
+	graph.adjacency_matrix[trans("s"), trans("t")] = 6
+	graph.adjacency_matrix[trans("s"), trans("y")] = 4
 
-	dijkstra(graph, 0)
+	graph.adjacency_matrix[trans("t"), trans("x")] = 3
+	graph.adjacency_matrix[trans("t"), trans("y")] = 2
+
+	graph.adjacency_matrix[trans("x"), trans("z")] = 4
+
+	graph.adjacency_matrix[trans("y"), trans("t")] = 1
+	graph.adjacency_matrix[trans("y"), trans("x")] = 9
+	graph.adjacency_matrix[trans("y"), trans("z")] = 3
+
+	graph.adjacency_matrix[trans("z"), trans("s")] = 7
+	graph.adjacency_matrix[trans("z"), trans("x")] = 5
+
+	dijkstra(graph, trans("s"))
