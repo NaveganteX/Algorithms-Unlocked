@@ -20,3 +20,4 @@ Python implementation of [Algorithms Unlocked](http://www.amazon.com/Algorithms-
 ###chapter 6
 1. [dijkstra.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_6/dijkstra.py)
 2. [heap_sort.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_6/heap_sort.py)
+3. [bellman_ford.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_6/bellman_ford.py)
