@@ -35,17 +35,20 @@ def dag_shortest_paths(graph, weight, source):
 	print("shortest:", shortest)
 	print("pred:    ", pred)
 
+def trans(alphabet):
+	return {"r":0, "s":1, "t":2, "x":3, "y":4, "z":5}[alphabet]
+
 if __name__ == '__main__':
 	graph = Graph(6)
-	graph.adjacency_matrix[0, 1] = 5
-	graph.adjacency_matrix[0, 2] = 3
-	graph.adjacency_matrix[1, 2] = 2
-	graph.adjacency_matrix[1, 3] = 6
-	graph.adjacency_matrix[2, 3] = 7
-	graph.adjacency_matrix[2, 4] = 4
-	graph.adjacency_matrix[2, 5] = 2
-	graph.adjacency_matrix[3, 4] = -1
-	graph.adjacency_matrix[3, 5] = 1
-	graph.adjacency_matrix[4, 5] = -2
+	graph.adjacency_matrix[trans("r"), trans("s")] = 5
+	graph.adjacency_matrix[trans("r"), trans("t")] = 3
+	graph.adjacency_matrix[trans("s"), trans("t")] = 2
+	graph.adjacency_matrix[trans("s"), trans("x")] = 6
+	graph.adjacency_matrix[trans("t"), trans("x")] = 7
+	graph.adjacency_matrix[trans("t"), trans("y")] = 4
+	graph.adjacency_matrix[trans("t"), trans("z")] = 2
+	graph.adjacency_matrix[trans("x"), trans("y")] = -1
+	graph.adjacency_matrix[trans("x"), trans("z")] = 1
+	graph.adjacency_matrix[trans("y"), trans("z")] = -2
 
-	dag_shortest_paths(graph, graph.adjacency_matrix, 0)
+	dag_shortest_paths(graph, graph.adjacency_matrix, trans("r"))
