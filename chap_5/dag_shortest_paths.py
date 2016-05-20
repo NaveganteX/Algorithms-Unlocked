@@ -42,13 +42,17 @@ if __name__ == '__main__':
 	graph = Graph(6)
 	graph.adjacency_matrix[trans("r"), trans("s")] = 5
 	graph.adjacency_matrix[trans("r"), trans("t")] = 3
+
 	graph.adjacency_matrix[trans("s"), trans("t")] = 2
 	graph.adjacency_matrix[trans("s"), trans("x")] = 6
+
 	graph.adjacency_matrix[trans("t"), trans("x")] = 7
 	graph.adjacency_matrix[trans("t"), trans("y")] = 4
 	graph.adjacency_matrix[trans("t"), trans("z")] = 2
+
 	graph.adjacency_matrix[trans("x"), trans("y")] = -1
 	graph.adjacency_matrix[trans("x"), trans("z")] = 1
+
 	graph.adjacency_matrix[trans("y"), trans("z")] = -2
 
 	dag_shortest_paths(graph, graph.adjacency_matrix, trans("r"))
