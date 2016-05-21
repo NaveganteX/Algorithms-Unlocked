@@ -10,7 +10,9 @@ def bellman_ford(graph, source):
 	queue = list(range(graph.v_num))
 
 	def _relax(u, v):
-		if shortest[v] == None or shortest[u] + graph.adjacency_matrix[u, v] < shortest[v]:
+		if u == v or shortest[u] is None:
+			return
+		if shortest[v] is None or shortest[u] + graph.adjacency_matrix[u, v] < shortest[v]:
 			shortest[v] = shortest[u] + graph.adjacency_matrix[u, v]
 			pred[v] = u
 
@@ -20,8 +22,7 @@ def bellman_ford(graph, source):
 				if graph.adjacent(i, m):
 					_relax(i, m)
 
-	print("shortest:", shortest)
-	print("pred:    ", pred)
+	return shortest, pred
 
 def trans(alphabet):
 	return {"s":0, "t":1, "x":2, "y":3, "z":4}[alphabet]
@@ -43,4 +44,6 @@ if __name__ == '__main__':
 	graph.adjacency_matrix[trans("z"), trans("s")] = 2
 	graph.adjacency_matrix[trans("z"), trans("x")] = 7
 
-	bellman_ford(graph, 0)
+	shortest, pred = bellman_ford(graph, 0)
+	print("shortest:", shortest)
+	print("pred:    ", pred)
