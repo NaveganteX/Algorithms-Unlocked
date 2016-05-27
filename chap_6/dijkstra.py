@@ -24,8 +24,7 @@ def dijkstra(graph, source):
 		for node in range(graph.v_num):
 			_relax(lowest_shortest_index, node)
 
-	print("shortest:", shortest)
-	print("pred:    ", pred)
+	return shortest, pred
 
 def trans(alphabet):
 	return {"s":0, "t":1, "x":2, "y":3, "z":4}[alphabet]
@@ -47,4 +46,6 @@ if __name__ == '__main__':
 	graph.adjacency_matrix[trans("z"), trans("s")] = 7
 	graph.adjacency_matrix[trans("z"), trans("x")] = 5
 
-	dijkstra(graph, trans("s"))
+	shortest, pred = dijkstra(graph, trans("s"))
+	print("shortest:", shortest)
+	print("pred:    ", pred)
