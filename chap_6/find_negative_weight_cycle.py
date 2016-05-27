@@ -11,7 +11,7 @@ def find_negative_weight_cycle(graph):
 		shortest, pred = bellman_ford(graph, i)
 		for m in range(graph.v_num):
 			for k in range(graph.v_num):
-				if graph.adjacent(m, k) and shortest[m]+graph.adjacency_matrix[m, k]<shortest[k]:
+				if shortest[m]+graph.adjacency_matrix[m, k]<shortest[k]:
 					suspect_edge.add((m, k))
 
 	for (u, v) in suspect_edge:
