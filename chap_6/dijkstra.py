@@ -4,28 +4,25 @@ sys.path.insert(0, '../chap_5')
 from dag_shortest_paths import Graph
 
 def dijkstra(graph, source):
-	shortest         = [None] * graph.v_num
+	shortest         = [float("inf")] * graph.v_num
 	shortest[source] = 0
 	pred  = [None] * graph.v_num
 	queue = list(range(graph.v_num))
 
 	def _relax(u, v):
-		if shortest[v] is None or shortest[u] + graph.adjacency_matrix[u, v] < shortest[v]:
+		if shortest[u] + graph.adjacency_matrix[u, v] < shortest[v]:
 			shortest[v] = shortest[u] + graph.adjacency_matrix[u, v]
 			pred[v] = u
 
 	while queue:
 		lowest_shortest_index = queue[0]
 		for v_index in queue:
-			if not shortest[lowest_shortest_index] and shortest[v_index]:
-				lowest_shortest_index = v_index
-			if shortest[v_index] and shortest[v_index] < shortest[lowest_shortest_index]:
+			if shortest[v_index] < shortest[lowest_shortest_index]:
 				lowest_shortest_index = v_index
 		queue.remove(lowest_shortest_index)
 
 		for node in range(graph.v_num):
-			if graph.adjacent(lowest_shortest_index, node):
-				_relax(lowest_shortest_index, node)
+			_relax(lowest_shortest_index, node)
 
 	print("shortest:", shortest)
 	print("pred:    ", pred)
