@@ -3,10 +3,12 @@ from topological_sort import topological_sort
 class Graph(object):
 	def __init__(self, num):
 		self.v_num = num
-		self.adjacency_matrix = { (i, m): None for i in range(self.v_num) for m in range(self.v_num) }
+		self.adjacency_matrix = { (i, m): float("inf") for i in range(self.v_num) for m in range(self.v_num) }
+		for i in range(self.v_num):
+			self.adjacency_matrix[i, i] = 0
 
 	def adjacent(self, i, m):
-		return self.adjacency_matrix[i, m] is not None
+		return self.adjacency_matrix[i, m] != float("inf") and i != m
 
 	def generate_adjacency_list(self):
 		adjacency_list = []
@@ -21,11 +23,11 @@ class Graph(object):
 def dag_shortest_paths(graph, source):
 	v_num = graph.v_num
 	pred  = [None] * v_num
-	shortest         = [None] * v_num
+	shortest         = [float("inf")] * v_num
 	shortest[source] = 0
 
 	def _relax(u, v):
-		if shortest[v] == None or shortest[u] + graph.adjacency_matrix[u, v] < shortest[v]:
+		if shortest[u] + graph.adjacency_matrix[u, v] < shortest[v]:
 			shortest[v] = shortest[u] + graph.adjacency_matrix[u, v]
 			pred[v] = u
 
