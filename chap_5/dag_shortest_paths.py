@@ -37,8 +37,7 @@ def dag_shortest_paths(graph, source):
 			if graph.adjacent(vertex_u, v):
 				_relax(vertex_u, v)
 
-	print("shortest:", shortest)
-	print("pred:    ", pred)
+	return shortest, pred
 
 def trans(alphabet):
 	return {"r":0, "s":1, "t":2, "x":3, "y":4, "z":5}[alphabet]
@@ -60,4 +59,6 @@ if __name__ == '__main__':
 
 	graph.adjacency_matrix[trans("y"), trans("z")] = -2
 
-	dag_shortest_paths(graph, trans("r"))
+	shortest, pred = dag_shortest_paths(graph, trans("r"))
+	print("shortest:", shortest)
+	print("pred:    ", pred)
