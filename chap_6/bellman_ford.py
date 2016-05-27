@@ -4,23 +4,20 @@ sys.path.insert(0, '../chap_5')
 from dag_shortest_paths import Graph
 
 def bellman_ford(graph, source):
-	shortest         = [None] * graph.v_num
+	shortest         = [float("inf")] * graph.v_num
 	shortest[source] = 0
 	pred  = [None] * graph.v_num
 	queue = list(range(graph.v_num))
 
 	def _relax(u, v):
-		if u == v or shortest[u] is None:
-			return
-		if shortest[v] is None or shortest[u] + graph.adjacency_matrix[u, v] < shortest[v]:
+		if shortest[u] + graph.adjacency_matrix[u, v] < shortest[v]:
 			shortest[v] = shortest[u] + graph.adjacency_matrix[u, v]
 			pred[v] = u
 
 	for _ in range(graph.v_num):
 		for i in range(graph.v_num):
 			for m in range(graph.v_num):
-				if graph.adjacent(i, m):
-					_relax(i, m)
+				_relax(i, m)
 
 	return shortest, pred
 
