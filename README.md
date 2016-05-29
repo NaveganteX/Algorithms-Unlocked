@@ -28,3 +28,6 @@ $ python3 file_name.py
 3. [bellman_ford.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_6/bellman_ford.py)
 4. [find_negative_weight_cycle.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_6/find_negative_weight_cycle.py)
 5. [floyd_warshall.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_6/floyd_warshall.py)
+
+###Chapter 7
+1. [compute_lcs_table.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/compute_lcs_table.py)
