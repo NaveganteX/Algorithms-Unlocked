@@ -1,4 +1,4 @@
-from compute_lcs_table import compute_lcs_table
+from compute_lcs_table import compute_lcs_table, print_table
 
 def assemble_lcs(x_str, y_str, lcs_table):
 	def _assemble_lcs(i, k, lcs):
@@ -18,4 +18,6 @@ if __name__ == '__main__':
 	x_str = "CATCGA"
 	y_str = "GTACCGTCA"
 	lcs_table = compute_lcs_table(x_str, y_str)
-	print(assemble_lcs(x_str, y_str, lcs_table))
+	print_table(lcs_table, x_str, y_str)
+	print()
+	print("lcs:", assemble_lcs(x_str, y_str, lcs_table))

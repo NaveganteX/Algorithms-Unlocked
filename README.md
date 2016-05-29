@@ -31,3 +31,4 @@ $ python3 file_name.py
 
 ###Chapter 7
 1. [compute_lcs_table.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/compute_lcs_table.py)
+2. [assemble_lcs.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/assemble_lcs.py)
