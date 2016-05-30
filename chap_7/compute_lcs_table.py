@@ -17,9 +17,9 @@ def compute_lcs_table(x_str, y_str):
 	return lcs_table
 
 def print_table(table, x_str, y_str):
-	print(end="    ")
+	print(end=" "*6)
 	for char in y_str:
-		print(char, end=" ")
+		print(char, end="  ")
 	print()
 
 	for i in range(-1, len(x_str)):
@@ -28,7 +28,7 @@ def print_table(table, x_str, y_str):
 		else:
 			print(end="  ")
 		for k in range(-1, len(y_str)):
-			print(table[i, k], end=" ")
+			print("%02d"%table[i, k], end=" ")
 		print()
 
 if __name__ == '__main__':
