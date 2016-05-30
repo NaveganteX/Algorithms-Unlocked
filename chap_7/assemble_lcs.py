@@ -20,4 +20,4 @@ if __name__ == '__main__':
 	lcs_table = compute_lcs_table(x_str, y_str)
 	print_table(lcs_table, x_str, y_str)
 	print()
-	print("lcs:", assemble_lcs(x_str, y_str, lcs_table))
+	print("Longest common subsequence:", assemble_lcs(x_str, y_str, lcs_table))
