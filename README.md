@@ -33,3 +33,4 @@ $ python3 file_name.py
 1. [compute_lcs_table.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/compute_lcs_table.py)
 2. [assemble_lcs.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/assemble_lcs.py)
 3. [compute_transform_tables.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/compute_transform_tables.py)
+4. [assemble_transformation.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/assemble_transformation.py)
