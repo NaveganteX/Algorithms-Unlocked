@@ -35,3 +35,4 @@ $ python3 file_name.py
 3. [compute_transform_tables.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/compute_transform_tables.py)
 4. [assemble_transformation.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/assemble_transformation.py)
 5. [fa_string_matcher.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/fa_string_matcher.py)
+6. [fill_next_state.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/fill_next_state.py)
