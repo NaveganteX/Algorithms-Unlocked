@@ -39,3 +39,4 @@ $ python3 file_name.py
 
 ###Chpater 8
 1. [euclid.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_8/euclid.py)
+2. [exponentiation.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_8/exponentiation.py)
