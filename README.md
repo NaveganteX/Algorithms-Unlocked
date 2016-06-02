@@ -36,3 +36,6 @@ $ python3 file_name.py
 4. [assemble_transformation.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/assemble_transformation.py)
 5. [fa_string_matcher.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/fa_string_matcher.py)
 6. [fill_next_state.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/fill_next_state.py)
+
+###Chpater 8
+1. [euclid.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_8/euclid.py)
