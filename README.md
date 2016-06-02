@@ -37,6 +37,9 @@ $ python3 file_name.py
 5. [fa_string_matcher.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/fa_string_matcher.py)
 6. [fill_next_state.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_7/fill_next_state.py)
 
-###Chpater 8
+###Chapter 8
 1. [euclid.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_8/euclid.py)
 2. [exponentiation.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_8/exponentiation.py)
+
+###Chapter 9
+1. [huffman_tree.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_9/huffman_tree.py)
