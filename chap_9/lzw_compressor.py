@@ -1,12 +1,9 @@
 import string
 
 def gen_ASCII_table():
-	ASCII_table = {}
-	for char in string.ascii_uppercase:
-		ASCII_table[ord(char)] = char
-
-	size = 256
-	# initialze ASCII character set with bare alphabet
+	ASCII_table = { ord(char): char for char in string.ascii_uppercase }
+	size        = 256
+	#initialze ASCII character set with bare alphabet
 	return ASCII_table, size
 
 def lzw_compressor(text):
