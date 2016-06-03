@@ -17,23 +17,22 @@ def lzw_compressor(text):
 			if code_dict[item] == s:
 				return item
 
-	code_sequence = []
+	encode_sequence = []
 	s, text = text[0], text[1:]
 	while text:
 		c, text = text[0], text[1:]
 		if _get_index(s+c):
 			s = s+c
 		else:
-			code_sequence += [_get_index(s)]
+			encode_sequence += [_get_index(s)]
 			code_dict[next_socket] = s+c
 			next_socket += 1
 			s = c
-	code_sequence += [_get_index(s)]
+	encode_sequence += [_get_index(s)]
 
-	return code_sequence
+	return encode_sequence
 
 if __name__ == '__main__':
 	text = "TATAGATCTTAATATA"
-
 	print("Text  :", text)
 	print("Encode:", lzw_compressor(text))
