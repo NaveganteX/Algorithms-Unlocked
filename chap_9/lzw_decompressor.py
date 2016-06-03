@@ -1,4 +1,3 @@
-import string
 from lzw_compressor import gen_ASCII_table, lzw_compressor
 
 def lzw_decompressor(indices):
