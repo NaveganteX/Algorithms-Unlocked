@@ -43,3 +43,4 @@ $ python3 file_name.py
 
 ###Chapter 9
 1. [huffman_tree.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_9/huffman_tree.py)
+2. [lzw_compressor.py](https://github.com/xRahn/Algorithm-Unlocked/blob/master/chap_9/lzw_compressor.py)
