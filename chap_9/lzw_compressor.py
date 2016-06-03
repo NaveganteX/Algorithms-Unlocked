@@ -1,13 +1,13 @@
 import string
 
 def gen_ASCII_table():
-	code_dict = {}
+	ASCII_table = {}
 	for char in string.ascii_uppercase:
-		code_dict[ord(char)] = char
+		ASCII_table[ord(char)] = char
 
 	size = 256
 	# initialze ASCII character set with bare alphabet
-	return code_dict, size
+	return ASCII_table, size
 
 def lzw_compressor(text):
 	code_dict, next_socket = gen_ASCII_table()
