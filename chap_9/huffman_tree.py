@@ -35,11 +35,8 @@ class TreeNode(object):
 			self.right.visit(indent)
 
 def count_freq(text):
-	char = []
-	freq = []
-	for c in set(text):
-		char += [c]
-		freq += [text.count(c)/len(text)]
+	char = [c for c in set(text)]
+	freq = [text.count(c)/len(text) for c in char]
 	return char, freq
 
 def build_huffman_tree(char, freq):
