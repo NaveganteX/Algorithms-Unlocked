@@ -2,9 +2,9 @@ class TreeNode(object):
 	def __init__(self, char, freq, left=None, right=None):
 		self.char = char
 		self.freq = freq
+		self.code = ""
 		self.left  = left
 		self.right = right
-		self.code = ""
 
 	def get_code_table(self):
 		code_table = {}
@@ -41,13 +41,9 @@ def count_freq(text):
 
 def build_huffman_tree(char, freq):
 	assert(len(char) is len(freq))
-	queue = []
-	n = len(char)
-	for i in range(n):
-		z_node = TreeNode(char[i], freq[i])
-		queue += [z_node]
 
-	for i in range(n-1):
+	queue = [TreeNode(char[i], freq[i]) for i in range(len(char))]
+	for i in range(len(char)-1):
 		queue.sort(key=lambda x: x.freq)
 		x, y  = queue[0:2]
 		queue = queue[2:]
